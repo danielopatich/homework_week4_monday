@@ -1,0 +1,48 @@
+@import "../bower_components/bourbon/app/assets/stylesheets/bourbon";
+// $visual-grid: true;
+@import "../bower_components/neat/app/assets/stylesheets/neat";
+
+
+* {
+  box-sizing: border-box;
+}
+
+
+main {
+  @include outer-container;
+}
+
+
+.calculator {
+  @include span-columns(8);
+  margin: 10px 10px;
+}
+
+.row #total {
+  border-top: 5px solid #565752;
+  width: 75%;
+  margin-right: 0;
+}
+
+#clear {
+  border-left: 5px solid #565752;
+  border-top: 5px solid #565752;
+}
+
+input {
+  height: 100px;
+  background: #A79C8C;
+  opacity: .9;
+  width: 25%;
+  border: none;
+  border-right: 5px solid #565752;
+  border-bottom: 5px solid #565752;
+  float: left;
+  outline: none;
+  border-top: none;
+  border-left: none;
+}
+
+#seven, #four, #one, #zero {
+  border-left: 5px solid #565752;
+}
