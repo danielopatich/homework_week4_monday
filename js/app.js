@@ -4,17 +4,27 @@ $(document).ready(function(){
    var num1;
    var num2;
    var operator;
-   var $answer = $('.display');
+   var $answer = $('#display');
+
+   // creating a function to clear display if expression is not completed
+   function clearall(){
+       num1= initValue;
+       num2= finalValue;
+       operator=null;
+       $answer.val('0');
+   }
 
 
+// replacing event listener //
 $('.number').click(function(){
-    var returnedNum = $(this).text();
     var initValue = $answer.val();
     var finalValue;
+    var returnedNum = $(this).text();
+//
     if (initValue === '0'){
       finalValue=returnedNum;
     }
-
+//
 else {
     finalValue = initValue + returnedNum;
 }
@@ -23,13 +33,6 @@ $answer.val(finalValue);
 
 });
 
-// creating a function to clear display if expression is not completed
-function clearall(){
-    num1= initValue;
-    num2= finalValue;
-    operator=null;
-    $answer.val('0');
-}
 
 $(".operator").click(function(){
        operator = $(this).text();
@@ -38,26 +41,28 @@ $(".operator").click(function(){
 });
 
 $(".equals").click(function(){
-       var total;
+       var result;
 
-       num2 = parseFloat($answer.val());
+       // trying parseint because i couldn't figure out how to work in the decimal for parsefloat //
+       num2 = parseInt($answer.val(result));
 
-       if (operator=== "+"){
-               total = num1 + num2;
+       if (operator=== "plus"){
+               result = num1 + num2;
        }
-       else if (operator === "-"){
-               total = num1 - num2;
+       else if (operator === "minus"){
+               result = num1 - num2;
        }
-       else if (operator === "*"){
-               total = num1 * num2;
+       else if (operator === "multiply"){
+               result = num1 * num2;
        }
-       else if (operator === "/"){
-               total = num1 / num2;
+       else if (operator === "divide"){
+               result = num1 / num2;
        }
-   $answer.val(total);
+   $answer.val(result);
 });
 
-$('.clear').click(function(){
+
+$('.equal').click(function(){
     return $answer;
 });
 
