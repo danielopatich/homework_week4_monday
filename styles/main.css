@@ -27,10 +27,11 @@ main {
   .calculator:last-child {
     margin-right: 0; }
 
-.row #total {
+.row #display {
   border-top: 5px solid #565752;
   width: 75%;
-  margin-right: 0; }
+  margin-right: 0;
+  text-align: right; }
 
 #clear {
   border-left: 5px solid #565752;
